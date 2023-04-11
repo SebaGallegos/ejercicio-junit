@@ -12,10 +12,11 @@ public class ReadCSV {
 
     public void doReadCSV(){
         try {
-            Scanner sc = new Scanner(new File(ruta));
-            sc.useDelimiter(",");
+            String path = new File(ruta).getAbsolutePath();
+            Scanner sc = new Scanner(new File(path));
+            //sc.useDelimiter(",");
             while (sc.hasNext()){
-                System.out.print(sc.next() + " ");
+                System.out.print(sc.next() + "\n");
             }
             sc.close();
         } catch (FileNotFoundException e) {

@@ -7,8 +7,8 @@ public class Main {
         Computador c = new Computador(2, "Lenovo", "100", "amd", 8, 500);
         Monitor m = new Monitor(3, "lg", "200", "1920x1080");
         Mouse mo = new Mouse(4, "Logitech", "1000000");
-        ReadCSV csv1 = new ReadCSV("/home/alumnos/IdeaProjects/ejercicio-junit5/src/csv/clientes.csv");
-        ReadCSV csv2 = new ReadCSV("/home/alumnos/IdeaProjects/ejercicio-junit5/src/csv/productos.csv");
+        ReadCSV csv1 = new ReadCSV("src/csv/clientes.csv");
+        ReadCSV csv2 = new ReadCSV("src/csv/productos.csv");
 
         /*System.out.println(cl);
         System.out.println(p);
