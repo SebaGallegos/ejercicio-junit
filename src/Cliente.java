@@ -22,15 +22,55 @@ public class Cliente {
         this.email = email;
     }
 
-    /*@Override
-    public String toString() {
-        return "Cliente{" +
-                "rut=" + rut +
-                ", idCliente=" + idCliente +
-                ", nombre='" + nombre + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", telefono=" + telefono +
-                ", email='" + email + '\'' +
-                '}';
-    }*/
+    public void setRut(int rut) {
+        this.rut = rut;
+    }
+
+    public int getRut() {
+        return rut;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public List<Producto> getListaP() {
+        return listaP;
+    }
 }
