@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 public class TestCliente {
 
     @Test
-    public void testConstructor(){
+    public void testCliente(){
         int rut = 123456789;
         int idCliente = 1;
         String nombre = "Juan Perez";

@@ -1,9 +1,17 @@
 public class Monitor extends Producto{
 
-    private String tamanio;
-    public Monitor(int id, String marca, String precioU, String tamanio) {
+    private int tamanio;
+    public Monitor(int id, String marca, int precioU, int tamanio) {
         super(id, marca, precioU);
         this.tamanio = tamanio;
+    }
+
+    public void setTamanio(int tamanio) {
+        this.tamanio = tamanio;
+    }
+
+    public int getTamanio() {
+        return tamanio;
     }
 
     @Override

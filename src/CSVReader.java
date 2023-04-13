@@ -5,14 +5,15 @@ import java.util.Scanner;
 public class CSVReader {
 
     // Constructor
-    public CSVReader(){}
+    public CSVReader() {
+    }
 
     public void productoCSV(String nCaracteristica) throws FileNotFoundException {
         String path = new File("src/csv/productos.csv").getAbsolutePath();
         Scanner sc = new Scanner(new File(path));
         sc.useDelimiter(",");
 
-        if(nCaracteristica.equals("No")) {
+        if (nCaracteristica.equals("0") || nCaracteristica.equals("1") || nCaracteristica.equals("3")) {
             String encabezado = sc.nextLine();
             String[] columnas = encabezado.split(",");
 
@@ -29,22 +30,22 @@ public class CSVReader {
                     System.out.println();
                 }
             }
-        } else if(nCaracteristica.equals("1") || nCaracteristica.equals("3")){
-            while (sc.hasNext()){
+        } else if (nCaracteristica.equals("no")) {
+            while (sc.hasNext()) {
                 System.out.print(sc.next() + "\t");
             }
-        } else{
+        } else {
             System.out.println("Opcion no valida");
         }
         sc.close();
     }
 
-    public void clienteCSV(){
+    public void clienteCSV() {
         try {
             String path = new File("src/csv/clientes.csv").getAbsolutePath();
             Scanner sc = new Scanner(new File(path));
             sc.useDelimiter(",");
-            while (sc.hasNext()){
+            while (sc.hasNext()) {
                 System.out.print(sc.next() + "\t");
             }
             sc.close();

@@ -1,5 +1,5 @@
 public class Mouse extends Producto{
-    public Mouse(int id, String marca, String precioU) {
+    public Mouse(int id, String marca, int precioU) {
         super(id, marca, precioU);
     }
 
