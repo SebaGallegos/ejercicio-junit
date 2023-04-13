@@ -22,7 +22,7 @@ public class Main {
         //listascsv.productoCSV("no");
 
         System.out.println("Lista de todos los computadores");
-        //listascsv.productoCSV("3");
+        listascsv.productoCSV("3");
 
         System.out.println("Lista de todos los monitores");
         //listascsv.productoCSV("1");

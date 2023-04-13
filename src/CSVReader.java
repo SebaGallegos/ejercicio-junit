@@ -24,8 +24,8 @@ public class CSVReader {
                 String linea = sc.nextLine();
                 String[] valores = linea.split(",");
                 if ((valores.length - 3) == Integer.parseInt(nCaracteristica)) {
-                    for (int i = 0; i < valores.length; i++) {
-                        System.out.print(valores[i] + "\t");
+                    for (String valore : valores) {
+                        System.out.print(valore + "\t");
                     }
                     System.out.println();
                 }
