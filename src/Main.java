@@ -10,24 +10,28 @@ public class Main {
         Mouse mo = new Mouse(4, "Logitech", 1000000);
 
         // Metodo de tipo CSVReader
-        CSVReader listascsv = new CSVReader();
+        //CSVReader listascsv = new CSVReader();
+        HelperCliente csvcliente = new HelperCliente();
+        HelperProducto prod = new HelperProducto();
 
         // Lectura de distintos tipos de datos en Archivos CSV
         // Descomentar llamada a metodo
 
         System.out.println("Lista de clientes\n");
         //listascsv.clienteCSV();
+        //csvcliente.leerArchivo();
 
-        System.out.println("Lista de todos los productos");
+        System.out.println("Lista de todos los productos\n");
         //listascsv.productoCSV("no");
+        prod.leerArchivo(3);
 
-        System.out.println("Lista de todos los computadores");
-        listascsv.productoCSV("3");
+        System.out.println("Lista de todos los computadores\n");
+        //listascsv.productoCSV("3");
 
-        System.out.println("Lista de todos los monitores");
+        System.out.println("Lista de todos los monitores\n");
         //listascsv.productoCSV("1");
 
-        System.out.println("Lista de todos los Mouse");
+        System.out.println("Lista de todos los Mouse\n");
         //listascsv.productoCSV("0");
 
 

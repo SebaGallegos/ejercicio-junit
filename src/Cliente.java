@@ -22,6 +22,8 @@ public class Cliente {
         this.email = email;
     }
 
+    //public void comprarProducto(){}
+
     public void setRut(int rut) {
         this.rut = rut;
     }
