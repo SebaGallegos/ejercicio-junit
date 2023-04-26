@@ -32,6 +32,27 @@ public class HelperCliente implements Helper{
         try{
             String path = new File("src/csv/clientes.csv").getAbsolutePath();
             File archivo = new File(path);
+            FileReader fr = new FileReader(archivo);
+            BufferedReader br = new BufferedReader(fr);
+            boolean existeCliente = false;
+            String linea;
+
+            while((linea = br.readLine()) != null){
+                String[] datos = linea.split(",");
+                if(Integer.parseInt(datos[2]) == clienteNuevo.getIdCliente()){
+                    existeCliente = true;
+                    break;
+                }
+            }
+
+            br.close();
+            fr.close();
+
+            if(existeCliente){
+                System.out.println("Cliente ya existe");
+                return;
+            }
+
             FileWriter fw = new FileWriter(archivo, true);
             BufferedWriter bw = new BufferedWriter(fw);
 
@@ -79,6 +100,11 @@ public class HelperCliente implements Helper{
                                     clienteActualizado.getDireccion() + "," +
                                     String.valueOf(clienteActualizado.getTelefono()) + "," +
                                     clienteActualizado.getEmail();
+                } else{
+                    System.out.println("Cliente no existe");
+                    br.close();
+                    fr.close();
+                    return;
                 }
 
                 lineas.add(lineaActual);
