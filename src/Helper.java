@@ -4,5 +4,4 @@ public interface Helper {
     void escribirArchivo();
     void actualizarArchivo();
 
-
 }
