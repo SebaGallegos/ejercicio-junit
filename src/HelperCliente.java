@@ -73,7 +73,7 @@ public class HelperCliente implements Helper{
 
     }
 
-    public void actualizarArchivo(int id, Cliente clienteActualizado) {
+    public void actualizarArchivo(Cliente clienteActualizado) {
         try{
             String path = new File("src/csv/clientes.csv").getAbsolutePath();
             File archivo = new File(path);
@@ -81,8 +81,17 @@ public class HelperCliente implements Helper{
             BufferedReader br = new BufferedReader(fr);
             ArrayList<String> lineas = new ArrayList<String>();
             String lineaActual;
+            boolean encontrado = false;
+            boolean primeraLinea = true;
 
             while ((lineaActual = br.readLine()) != null){
+
+                if(primeraLinea){
+                    lineas.add(lineaActual);
+                    primeraLinea = false;
+                    continue;
+                }
+
                 String[] datosCliente = lineaActual.split(",");
                 int idCliente;
 
@@ -93,18 +102,15 @@ public class HelperCliente implements Helper{
                     continue;
                 }
 
-                if (idCliente == id){
+                if (idCliente == clienteActualizado.getIdCliente()){
                     lineaActual = String.valueOf(clienteActualizado.getRut()) + "," +
                                     clienteActualizado.getNombre() + "," +
                                     idCliente + "," +
                                     clienteActualizado.getDireccion() + "," +
                                     String.valueOf(clienteActualizado.getTelefono()) + "," +
                                     clienteActualizado.getEmail();
-                } else{
-                    System.out.println("Cliente no existe");
-                    br.close();
-                    fr.close();
-                    return;
+
+                    encontrado = true;
                 }
 
                 lineas.add(lineaActual);
@@ -112,6 +118,11 @@ public class HelperCliente implements Helper{
 
             br.close();
             fr.close();
+
+            if(!encontrado){
+                System.out.println("Cliente no existe");
+                return;
+            }
 
             FileWriter fw = new FileWriter(archivo);
             BufferedWriter bw = new BufferedWriter(fw);
@@ -128,6 +139,29 @@ public class HelperCliente implements Helper{
             fw.close();
 
 
+        } catch (IOException e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void leerLinea(int id){
+        try{
+            String path = new File("src/csv/clientes.csv").getAbsolutePath();
+            File archivo = new File(path);
+            FileReader fr = new FileReader(archivo);
+            BufferedReader br = new BufferedReader(fr);
+            String linea;
+
+            while ((linea = br.readLine()) != null){
+                String[] datos = linea.split(",");
+                if (datos.length > 2 && datos[2].equals(String.valueOf(id))){
+                    System.out.println(linea);
+                    break;
+                }
+            }
+
+            br.close();
+            fr.close();
         } catch (IOException e){
             throw new RuntimeException(e);
         }

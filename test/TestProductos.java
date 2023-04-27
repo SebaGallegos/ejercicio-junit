@@ -25,7 +25,7 @@ public class TestProductos {
         int ram = 8;
         int disco = 500;
 
-        Computador computador = new Computador(idProducto, marca, precioUnitario, marca, ram, disco);
+        Computador computador = new Computador(idProducto, marca, precioUnitario, cpu, ram, disco);
 
         Assertions.assertEquals(idProducto, computador.getIdProducto());
         Assertions.assertEquals(marca, computador.getMarca());

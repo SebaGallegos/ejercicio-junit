@@ -10,7 +10,7 @@ public class Cliente {
     private int telefono;
     private String email;
 
-    // Revisar atributo de lista de producto por cada cliente
+    // Lista de producto por cada cliente
     List<Producto> listaP = new ArrayList<Producto>();
 
     public Cliente(int rut, int idCliente, String nombre, String direccion, int tel, String email){
